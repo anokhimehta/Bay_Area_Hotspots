@@ -1,4 +1,16 @@
-<head>
+<!DOCTYPE html>
+  <head>
+    <h1>BAY AREA HOTSPOTS</h1>
+    <p1>
+        An interactive website that allows you to find popular and trendy food eateries in whatever Bay Area location the user wishes. Searches can be narrowed by category.
+    </p1>
+    <link href="bah.css" rel="stylesheet" />
+    <script src="bah.js" type="text/javascript"></script>
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLrGYTsSGfhTn4RrLbq-rbG7N3U7xOty4&callback=initMap"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {margin: 0;}
