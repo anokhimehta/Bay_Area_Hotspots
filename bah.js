@@ -157,4 +157,4 @@ function initMap() {
   marker7.addListener('click', function() {
     infowindow7.open(map, marker7);
   });
-
+}
