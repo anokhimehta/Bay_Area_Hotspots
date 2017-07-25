@@ -1,16 +1,37 @@
-
-
+class loc {
+  constructor(latitude, longitude){
+    this.latitude = latitude;
+    this.longitude = longitude;
+  };
+  getDict(){
+    return new google.maps.LatLng(this.latitude,this.longitude);
+  };
+  getInfoWindow(contentString){
+    return new google.maps.InfoWindow({content: contentString});
+  };
+  getMarker(m, t){
+    return new google.maps.Marker({
+      position: this.getDict(),
+      map: m,
+      title: t });
+  };
+}//end class
+function listen(iw, m, mark) {
+  iw.open(m,mark);
+}
 function initMap() {
-  var tpumps = {lat: 37.763651, lng: -122.478593};
-  var pekoe = {lat: 37.314634, lng: -121.790131};
-  var gongcha = {lat: 37.488570, lng: -121.929026};
-  var moobar = {lat: 37.345997, lng: -121.979069};
-  var bakedbear = {lat: 37.807402, lng: -122.417155};
-  var steep = {lat: 37.783115, lng: -122.391778};
-  var uji = {lat: 37.863657, lng: -122.258288};
+  var infowindows = [];
+  var markers  = [];
+  var tpumps = new loc(37.763651,-122.478593);
+  var pekoe = new loc(37.314634,-121.790131);
+  var gongcha = new loc(37.488570,-121.9290260);
+  var moobar = new loc(37.345997,-121.979069);
+  var bakedbear = new loc(37.807402,-122.417155);
+  var steep = new loc(37.783115,-122.391778);
+  var uji = new loc(37.863657,-122.258288);
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 9,
-    center: tpumps
+    center: tpumps.getDict()
   });
 
   var contentString = '<div id="content">'+
@@ -76,73 +97,55 @@ function initMap() {
 '<img id="myImage" src="https://s3-media1.fl.yelpcdn.com/bphoto/92RgfLHRABBCNxBsBoGg0w/ls.jpg" height=150 width=150></img>' +
       '</div>'+
       '</div>';
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-  	var infowindow2 = new google.maps.InfoWindow({
-    content: contentString2
-  });
-	var infowindow3 = new google.maps.InfoWindow({
-    content: contentString3
-  });
-  var infowindow4 = new google.maps.InfoWindow({
-    content: contentString4
-  });
-  var infowindow5 = new google.maps.InfoWindow({
-    content: contentString5
-  });
-   var infowindow6 = new google.maps.InfoWindow({
-    content: contentString6
-  });
-    var infowindow7 = new google.maps.InfoWindow({
-    content: contentString7
-  });
-  var marker = new google.maps.Marker({
-    position: tpumps,
-    map: map,
-    title: 'T-pumps'
-  });
-  var marker2 = new google.maps.Marker({
-    position: pekoe,
-    map: map,
-    title: 'Pekoe'
-  });
-  var marker3 = new google.maps.Marker({
-    position: gongcha,
-    map: map,
-    title: 'Gongcha'
-  });
-  var marker4 = new google.maps.Marker({
-    position: moobar,
-    map: map,
-    title: 'Moo Bar'
-  });
-  var marker5 = new google.maps.Marker({
-    position: bakedbear,
-    map: map,
-    title: 'The Baked Bear'
-  });
-    var marker6 = new google.maps.Marker({
-    position: steep,
-    map: map,
-    title: 'STEEP Creamery and Tea'
-  });
- var marker7 = new google.maps.Marker({
-    position: uji,
-    map: map,
-    title: 'Uji Time'
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
 
-   marker2.addListener('click', function() {
+//INFOWINDOWS
+  var infowindow = tpumps.getInfoWindow(contentString);
+  var infowindow2 = pekoe.getInfoWindow(contentString2);
+	var infowindow3 = gongcha.getInfoWindow(contentString3);
+  var infowindow4 = moobar.getInfoWindow(contentString4);
+  var infowindow5 = bakedbear.getInfoWindow(contentString5);
+  var infowindow6 = steep.getInfoWindow(contentString6);
+  var infowindow7 = uji.getInfoWindow(contentString7);
+
+//MARKERS
+  var marker = tpumps.getMarker(map,'T-Pumps');
+  infowindows.push(infowindow);
+  markers.push(marker);
+
+  var marker2 = pekoe.getMarker(map,'Pekoe');
+  infowindows.push(infowindow2);
+  markers.push(marker2);
+
+  var marker3 = gongcha.getMarker(map,'Gongcha');
+  infowindows.push(infowindow3);
+  markers.push(marker3);
+
+  var marker4 = moobar.getMarker(map,'Moo Bar');
+  infowindows.push(infowindow4);
+  markers.push(marker4);
+
+  var marker5 = bakedbear.getMarker(map,'The Baked Bear');
+  infowindows.push(infowindow5);
+  markers.push(marker5);
+
+  var marker6 = steep.getMarker(map,'STEEP Creamery and Tea');
+  infowindows.push(infowindow6);
+  markers.push(marker6);
+
+  var marker7 = uji.getMarker(map,'Uji Time');
+  infowindows.push(infowindow7);
+  markers.push(marker7);
+
+  marker.addListener('click',function() {
+    infowindow.open(map,marker);
+  });
+  marker2.addListener('click', function() {
     infowindow2.open(map, marker2);
   });
-   marker3.addListener('click', function() {
+  marker3.addListener('click', function() {
     infowindow3.open(map, marker3);
   });
-    marker4.addListener('click', function() {
+  marker4.addListener('click', function() {
     infowindow4.open(map, marker4);
   });
   marker5.addListener('click', function() {
@@ -151,8 +154,7 @@ function initMap() {
   marker6.addListener('click', function() {
     infowindow6.open(map, marker6);
   });
-    marker7.addListener('click', function() {
+  marker7.addListener('click', function() {
     infowindow7.open(map, marker7);
   });
 
-}
