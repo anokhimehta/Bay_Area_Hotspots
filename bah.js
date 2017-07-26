@@ -22,6 +22,7 @@ function listen(iw, m, mark) {
 function initMap() {
   var infowindows = [];
   var markers  = [];
+//deleted: 29,
   var tpumps = new loc(37.763651,-122.478593);
   var pekoe = new loc(37.314634,-121.790131);
   var gongcha = new loc(37.488570,-121.9290260);
@@ -50,14 +51,13 @@ function initMap() {
   var vans = new loc(37.322815, -121.824144);
   var mintsnhoney = new loc(37.496182, -122.247695);
   var milkncookie = new loc(37.708630, -122.091285);
-  var cookiebar = new loc(37.775490, -122.276511);
   var nekter = new loc(38.063919, -122.533778);
   var freshnation = new loc(37.563246, -122.325125);
   var bellygood = new loc(37.785089, -122.430560);
   var tealyfe = new loc(37.332430, -121.857770);
   var popup = new loc(37.266997, -121.833672);
   var icicles = new loc(37.305188, -121.899314);
-  var maven = new loc(37.312787, -121.864847);	
+  var maven = new loc(37.312787, -121.864847);
   var honeyberry = new loc(37.300587, -121.771670);
   var pop = new loc(37.762062, -121.433319);
   var fantasia = new loc(37.395425, -121.946525);
@@ -324,15 +324,6 @@ var contentString28 = '<div id="content">'+
 '<img id="myImage" src="https://s3-media2.fl.yelpcdn.com/bphoto/rV6ZPGaO-xFrZTRurbZOIg/o.jpg" height=150 width=150></img>' +
       '</div>'+
       '</div>';
-var contentString29 = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">Cookiebar</h1>'+
-      '<div id="bodyContent">'+
-      '<p>ice cream</p>' +'<p>1606 Webster St, Alameda, CA 94501</p>' +
-'<img id="myImage" src="https://s3-media3.fl.yelpcdn.com/bphoto/Q1_Q1OdqjEEP-O5qwsObXg/o.jpg" height=150 width=150></img>' +
-      '</div>'+
-      '</div>';
 var contentString30 = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -507,7 +498,6 @@ var contentString45 = '<div id="content">'+
   var infowindow26 = vans.getInfoWindow(contentString26);
   var infowindow27 = mintsnhoney.getInfoWindow(contentString27);
   var infowindow28 = milkncookie.getInfoWindow(contentString28);
-  var infowindow29 = cookiebar.getInfoWindow(contentString29);
   var infowindow30 = nekter.getInfoWindow(contentString30);
   var infowindow31= freshnation.getInfoWindow(contentString31);
   var infowindow32 = bellygood.getInfoWindow(contentString32);
@@ -553,55 +543,55 @@ var contentString45 = '<div id="content">'+
   var marker7 = uji.getMarker(map,'Uji Time');
   infowindows.push(infowindow7);
   markers.push(marker7);
-	
+
 var marker8 = vampirepenguin.getMarker(map,'Vampire Penguin');
   infowindows.push(infowindow8);
   markers.push(marker8);
-  
+
   var marker9 = popbar.getMarker(map,'Popbar');
   infowindows.push(infowindow9);
   markers.push(marker9);
-  
+
   var marker10 = snowyvillage.getMarker(map,'Snowy Village');
   infowindows.push(infowindow10);
   markers.push(marker10);
-  
+
   var marker11 = yumiyogurt.getMarker(map,'Yumi Yogurt');
   infowindows.push(infowindow11);
   markers.push(marker11);
- 	
+
   var marker12 = milkcow.getMarker(map,'Milkcow');
   infowindows.push(infowindow12);
   markers.push(marker12);
-  
+
   var marker13 = ohoney.getMarker(map,'O\'Honey');
   infowindows.push(infowindow13);
   markers.push(marker13);
-  
+
   var marker14 = yummitea.getMarker(map,'Yummi Hotpot and Tea');
   infowindows.push(infowindow14);
   markers.push(marker14);
-  
+
   var marker15 = meetfresh.getMarker(map,'Meet Fresh');
   infowindows.push(infowindow15);
   markers.push(marker15);
-  
+
   var marker16 = bobaguys.getMarker(map,'Boba Guys');
   infowindows.push(infowindow16);
   markers.push(marker16);
-  
+
   var marker17 = teaquation.getMarker(map,'Teaquation Cafe');
   infowindows.push(infowindow17);
   markers.push(marker17);
-  
+
   var marker18 = queenscafe.getMarker(map,'Queen\'s Cafe');
   infowindows.push(infowindow18);
   markers.push(marker18);
-  
+
   var marker19 = homecafe.getMarker(map,'Home Cafe');
   infowindows.push(infowindow19);
   markers.push(marker19);
-  
+
   var marker20 = cream.getMarker(map,'CREAM');
   infowindows.push(infowindow20);
   markers.push(marker20);
@@ -621,31 +611,28 @@ var marker8 = vampirepenguin.getMarker(map,'Vampire Penguin');
 	var marker24 = whatever.getMarker(map,'What8ever Express');
   infowindows.push(infowindow24);
   markers.push(marker24);
-  
+
   var marker25 = tswirl.getMarker(map,'T-Swirl Crepe');
   infowindows.push(infowindow25);
   markers.push(marker25);
-  
+
   var marker26 = vans.getMarker(map,'Van\'s Bakery');
   infowindows.push(infowindow26);
   markers.push(marker26);
-  
+
   var marker27 = mintsnhoney.getMarker(map,'Mints and Honey');
   infowindows.push(infowindow27);
   markers.push(marker27);
-  
+
   var marker28 = milkncookie.getMarker(map,'Milk and Cookie Bar');
   infowindows.push(infowindow28);
   markers.push(marker28);
-  
-  var marker29 = cookiebar.getMarker(map,'Cookiebar');
-  infowindows.push(infowindow29);
-  markers.push(marker29);
-  
+
+
   var marker30 = nekter.getMarker(map,'Nekter Juice Bar');
   infowindows.push(infowindow30);
   markers.push(marker30);
-  
+
   var marker31= freshnation.getMarker(map,'Fresh Nation Desserts');
   infowindows.push(infowindow31);
   markers.push(marker31);
@@ -653,7 +640,7 @@ var marker8 = vampirepenguin.getMarker(map,'Vampire Penguin');
 	var marker32 = bellygood.getMarker(map,'Belly Good Cafe and Crepes');
   infowindows.push(infowindow32);
   markers.push(marker32);
-  
+
   var marker33 = tealyfe.getMarker(map,'Tealyfe');
   infowindows.push(infowindow33);
   markers.push(marker33);
@@ -674,7 +661,7 @@ var marker37 = honeyberry.getMarker(map,'Milk and Wood');
   infowindows.push(infowindow37);
   markers.push(marker37);
 
-var marker38 = pop.getMarker(map,'Tiger Tea and Juice');
+var marker38 = pop.getMarker(map,'POP');
   infowindows.push(infowindow38);
   markers.push(marker38);
 
@@ -793,9 +780,6 @@ marker8.addListener('click', function() {
   marker28.addListener('click',function() {
     infowindow28.open(map,marker28);
   });
-  marker29.addListener('click',function() {
-    infowindow29.open(map,marker29);
-  });
   marker30.addListener('click',function() {
     infowindow30.open(map,marker30);
   });
@@ -804,7 +788,7 @@ marker8.addListener('click', function() {
   });
   marker32.addListener('click',function() {
   	infowindow32.open(map,marker32);
-  });  
+  });
   marker33.addListener('click',function() {
     infowindow33.open(map,marker33);
   });
